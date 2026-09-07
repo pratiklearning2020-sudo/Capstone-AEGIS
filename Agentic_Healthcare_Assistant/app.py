@@ -227,9 +227,14 @@ st.markdown("""
         background-color: #0284c7 !important;
     }
 
-    /* Standardized Selectbox & Dropdown Overrides (Immune to Cloud Theme Inversion) */
+    /* Standardized Selectbox & Dropdown Overrides (Immune to Cloud Theme Inversion & Zero Config File Needed) */
     [data-testid="stSelectbox"] {
+        background-color: transparent !important;
         color: #f1f5f9 !important;
+    }
+
+    [data-testid="stSelectbox"] > div {
+        background-color: transparent !important;
     }
 
     [data-testid="stSelectbox"] label, [data-testid="stSelectbox"] [data-testid="stWidgetLabel"] p {
@@ -237,19 +242,28 @@ st.markdown("""
         font-weight: 600 !important;
     }
 
-    div[data-baseweb="select"] {
-        background-color: transparent !important;
+    /* All Divs Inside and Behind the Select Control */
+    div[data-baseweb="select"],
+    div[data-baseweb="select"] div,
+    div[data-baseweb="select"] > div,
+    div[data-baseweb="select"] > div > div,
+    div[data-baseweb="select"] [role="combobox"],
+    div[data-baseweb="select"] [aria-expanded] {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+        border-color: #334155 !important;
     }
 
     div[data-baseweb="select"] > div {
-        background-color: #1e293b !important;
-        color: #f8fafc !important;
         border: 1px solid #334155 !important;
         border-radius: 8px !important;
+        overflow: hidden !important;
     }
 
-    div[data-baseweb="select"]:hover > div {
+    div[data-baseweb="select"]:hover > div,
+    div[data-baseweb="select"]:focus-within > div {
         border-color: #0284c7 !important;
+        box-shadow: 0 0 0 1px #0284c7 !important;
     }
 
     div[data-baseweb="select"] * {
@@ -261,16 +275,24 @@ st.markdown("""
         color: #94a3b8 !important;
     }
 
-    /* BaseWeb Popover rendered at root body level */
+    /* All Divs Inside and Behind the Popover Dropdown Menu (Rendered at Body Level) */
     div[data-baseweb="popover"],
     div[data-baseweb="popover"] > div,
+    div[data-baseweb="popover"] div,
     div[data-baseweb="menu"],
+    div[data-baseweb="menu"] > div,
+    div[data-baseweb="menu"] div,
     ul[role="listbox"] {
         background-color: #0f172a !important;
+        border-color: #334155 !important;
+        color: #f8fafc !important;
+    }
+
+    div[data-baseweb="popover"] {
         border: 1px solid #334155 !important;
         border-radius: 8px !important;
-        color: #f8fafc !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6) !important;
+        overflow: hidden !important;
     }
 
     div[data-baseweb="popover"] li,
@@ -279,13 +301,17 @@ st.markdown("""
         background-color: #0f172a !important;
         color: #f8fafc !important;
         font-size: 14px !important;
-        padding: 8px 12px !important;
+        padding: 9px 14px !important;
         cursor: pointer !important;
+        transition: background-color 0.15s ease, color 0.15s ease;
     }
 
     div[data-baseweb="popover"] li:hover,
     ul[role="listbox"] li:hover,
-    li[role="option"]:hover {
+    li[role="option"]:hover,
+    div[data-baseweb="popover"] li:focus,
+    ul[role="listbox"] li:focus,
+    li[role="option"]:focus {
         background-color: #0284c7 !important;
         color: #ffffff !important;
     }
@@ -302,6 +328,14 @@ st.markdown("""
     ul[role="listbox"] li[aria-selected="true"]:hover {
         background-color: #0284c7 !important;
         color: #ffffff !important;
+    }
+
+    /* Make Sure Containers and Columns Behind Widgets are Transparent */
+    [data-testid="column"],
+    [data-testid="column"] > div,
+    [data-testid="stHorizontalBlock"],
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background-color: transparent !important;
     }
 
     /* Streamlit Default Headers, Toolbar & Decoration Override */
