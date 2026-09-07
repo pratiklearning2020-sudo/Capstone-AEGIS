@@ -581,6 +581,141 @@ st.markdown("""
         border: 1px solid #334155 !important;
     }
 
+    /* CRITICAL DEPLOYMENT SHIELD: Forbid Light Mode Inversion & White Boxes Across All Containers */
+    [data-testid="stAppViewContainer"],
+    [data-testid="stAppViewBlockContainer"],
+    section.main,
+    .main .block-container,
+    [data-testid="stVerticalBlock"] > div,
+    [data-testid="stSidebarContent"],
+    [data-testid="stSidebarUserContent"] {
+        background-color: #090d16 !important;
+        color: #f1f5f9 !important;
+    }
+
+    /* Standardized Streamlit Expanders (No White Boxes in Light Mode) */
+    [data-testid="stExpander"],
+    details {
+        background-color: #0f172a !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 10px !important;
+        color: #f1f5f9 !important;
+        overflow: hidden !important;
+        margin-bottom: 10px !important;
+    }
+
+    summary,
+    details > summary,
+    [data-testid="stExpander"] summary {
+        background-color: #131c31 !important;
+        color: #f1f5f9 !important;
+        border-radius: 8px !important;
+        padding: 10px 14px !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        border: none !important;
+    }
+
+    summary:hover,
+    details > summary:hover,
+    [data-testid="stExpander"] summary:hover {
+        background-color: #18263f !important;
+        color: #38bdf8 !important;
+    }
+
+    summary svg,
+    details > summary svg,
+    [data-testid="stExpander"] summary svg {
+        color: #38bdf8 !important;
+        fill: #38bdf8 !important;
+    }
+
+    [data-testid="stExpanderDetails"],
+    details > div:not(summary) {
+        background-color: #0b1120 !important;
+        color: #f1f5f9 !important;
+        padding: 14px !important;
+        border-top: 1px solid #1e293b !important;
+    }
+
+    /* Sidebar Expanders */
+    section[data-testid="stSidebar"] [data-testid="stExpander"],
+    section[data-testid="stSidebar"] details {
+        background-color: #111827 !important;
+        border: 1px solid #1f2937 !important;
+    }
+
+    section[data-testid="stSidebar"] summary {
+        background-color: #182234 !important;
+    }
+
+    section[data-testid="stSidebar"] [data-testid="stExpanderDetails"] {
+        background-color: #0f172a !important;
+    }
+
+    /* Standardized Forms */
+    div[data-testid="stForm"] {
+        background-color: #0f172a !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 12px !important;
+        padding: 18px !important;
+    }
+
+    /* Standardized Streamlit Alerts (Never White Pastels with White Text) */
+    div[data-testid="stAlert"] {
+        border-radius: 8px !important;
+        padding: 10px 14px !important;
+    }
+
+    div[data-testid="stAlert"][data-baseweb*="notification"] {
+        background-color: #0f172a !important;
+        color: #f1f5f9 !important;
+    }
+
+    div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] p {
+        color: #f1f5f9 !important;
+    }
+
+    /* Tabs & Panels */
+    div[data-baseweb="tab-list"] {
+        background-color: #090d16 !important;
+        border-bottom: 1px solid #1e293b !important;
+    }
+
+    button[role="tab"] {
+        color: #94a3b8 !important;
+        font-weight: 600 !important;
+    }
+
+    button[role="tab"][aria-selected="true"] {
+        color: #38bdf8 !important;
+        border-bottom-color: #0284c7 !important;
+    }
+
+    div[data-baseweb="tab-panel"] {
+        background-color: transparent !important;
+        color: #f1f5f9 !important;
+    }
+
+    /* Chat Messages & Input */
+    div[data-testid="stChatMessage"] {
+        background-color: #111827 !important;
+        border: 1px solid #1f2937 !important;
+        border-radius: 10px !important;
+    }
+
+    div[data-testid="stChatInput"],
+    div[data-testid="stChatInput"] > div {
+        background-color: #0f172a !important;
+        border: 1px solid #334155 !important;
+        border-radius: 10px !important;
+    }
+
+    div[data-testid="stChatInput"] textarea {
+        background-color: transparent !important;
+        color: #f8fafc !important;
+    }
+
     /* Standardized DataTables & JSON Viewers */
     [data-testid="stDataFrame"], [data-testid="stJson"] {
         background-color: #111827 !important;
