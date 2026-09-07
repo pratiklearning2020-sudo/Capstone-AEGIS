@@ -1,0 +1,43 @@
+[
+  {
+    "appointment_id": "APT-INIT-101",
+    "patient_name": "Rebeca Nagle",
+    "patient_phone": "+1-541-950-0000",
+    "doctor_id": "DOC-FAM-01",
+    "doctor_name": "Dr. Megana Lanoi, MD",
+    "specialty": "Family Medicine",
+    "slot_date": "2026-09-08",
+    "slot_time": "08:30 AM",
+    "reason": "Routine clinical review for costochondritis and wellness exam",
+    "status": "CONFIRMED",
+    "created_at": "2026-09-08T00:56:34.171438"
+  },
+  {
+    "appointment_id": "APT-NEPH-0EB0E2",
+    "patient_name": "Robert Thompson (Father)",
+    "patient_phone": "+1-541-950-1122",
+    "doctor_id": "DOC-NEPH-01",
+    "doctor_name": "Dr. Aris Thorne, MD",
+    "specialty": "Nephrology",
+    "clinic": "Renal & Kidney Care Center, Suite 400",
+    "slot_date": "2026-09-09",
+    "slot_time": "09:30 AM",
+    "reason": "Consultation for Chronic Kidney Disease (CKD)",
+    "status": "CONFIRMED",
+    "created_at": "2026-09-08T00:56:48.026452"
+  },
+  {
+    "appointment_id": "APT-FAMI-078031",
+    "patient_name": "Anjali Mehra",
+    "patient_phone": "+91-98180-11245",
+    "doctor_id": "DOC-FAM-01",
+    "doctor_name": "Dr. Megana Lanoi, MD",
+    "specialty": "Family Medicine",
+    "clinic": "Bridport Family Medicine & Primary Care",
+    "slot_date": "2026-09-09",
+    "slot_time": "08:30 AM",
+    "reason": "Consultation for 33-year-old female presenting with 5-day history of dry cough, nasal congestion, and low-grade fever. Diagnosis: Acute U",
+    "status": "CONFIRMED",
+    "created_at": "2026-09-08T01:01:54.633594"
+  }
+]
