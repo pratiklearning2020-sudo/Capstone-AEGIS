@@ -1,0 +1,95 @@
+[
+  {
+    "doctor_id": "DOC-NEPH-01",
+    "name": "Dr. Aris Thorne, MD",
+    "specialty": "Nephrology",
+    "clinic": "Renal & Kidney Care Center, Suite 400",
+    "consultation_fee": 150,
+    "rating": 4.9,
+    "available_slots": [
+      "09:30 AM",
+      "10:30 AM",
+      "02:00 PM",
+      "04:30 PM"
+    ]
+  },
+  {
+    "doctor_id": "DOC-NEPH-02",
+    "name": "Dr. Priya Sharma, MD",
+    "specialty": "Nephrology",
+    "clinic": "Metro Nephrology & Dialysis Institute",
+    "consultation_fee": 160,
+    "rating": 4.8,
+    "available_slots": [
+      "11:00 AM",
+      "01:30 PM",
+      "03:30 PM"
+    ]
+  },
+  {
+    "doctor_id": "DOC-CARD-01",
+    "name": "Dr. Rajesh Patel, MD",
+    "specialty": "Cardiology",
+    "clinic": "City Heart & Vascular Institute",
+    "consultation_fee": 175,
+    "rating": 4.9,
+    "available_slots": [
+      "09:00 AM",
+      "11:30 AM",
+      "03:00 PM"
+    ]
+  },
+  {
+    "doctor_id": "DOC-ENDO-01",
+    "name": "Dr. Vikram Sen, MD",
+    "specialty": "Endocrinology",
+    "clinic": "Advanced Diabetes & Endocrine Center",
+    "consultation_fee": 140,
+    "rating": 4.7,
+    "available_slots": [
+      "10:00 AM",
+      "12:00 PM",
+      "02:30 PM"
+    ]
+  },
+  {
+    "doctor_id": "DOC-PULM-01",
+    "name": "Dr. Kavita Nair, MD",
+    "specialty": "Pulmonology",
+    "clinic": "Pulmonary & Respiratory Wellness Clinic",
+    "consultation_fee": 145,
+    "rating": 4.8,
+    "available_slots": [
+      "10:30 AM",
+      "01:00 PM",
+      "04:00 PM"
+    ]
+  },
+  {
+    "doctor_id": "DOC-FAM-01",
+    "name": "Dr. Megana Lanoi, MD",
+    "specialty": "Family Medicine",
+    "clinic": "Bridport Family Medicine & Primary Care",
+    "consultation_fee": 120,
+    "rating": 4.9,
+    "available_slots": [
+      "08:30 AM",
+      "10:00 AM",
+      "01:30 PM",
+      "03:00 PM"
+    ]
+  },
+  {
+    "doctor_id": "DOC-GER-01",
+    "name": "Dr. Harold Vance, MD",
+    "specialty": "Geriatrics",
+    "clinic": "ElderCare & Comprehensive Geriatric Clinic",
+    "consultation_fee": 155,
+    "rating": 4.9,
+    "available_slots": [
+      "09:30 AM",
+      "11:00 AM",
+      "02:00 PM"
+    ]
+  }
+]
