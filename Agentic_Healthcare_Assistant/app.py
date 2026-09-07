@@ -119,6 +119,189 @@ st.markdown("""
         background-color: #090d16 !important;
         color: #f1f5f9 !important;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        --primary-color: #0284c7 !important;
+        --background-color: #090d16 !important;
+        --secondary-background-color: #0f172a !important;
+        --text-color: #f1f5f9 !important;
+    }
+
+    /* Standardized Hyperlinks Across the App */
+    a, a:link, a:visited {
+        color: #38bdf8 !important;
+        text-decoration: none !important;
+        transition: color 0.15s ease;
+    }
+
+    a:hover, a:focus {
+        color: #0284c7 !important;
+        text-decoration: underline !important;
+    }
+
+    /* Standardized File Uploader & Dropzone (Identical on Cloud & Local) */
+    [data-testid="stFileUploader"] {
+        background: transparent !important;
+    }
+
+    [data-testid="stFileUploader"] label, [data-testid="stFileUploader"] [data-testid="stWidgetLabel"] p {
+        color: #e2e8f0 !important;
+        font-weight: 600 !important;
+    }
+
+    section[data-testid="stFileUploadDropzone"] {
+        background-color: #0f172a !important;
+        border: 2px dashed #0284c7 !important;
+        border-radius: 10px !important;
+        padding: 16px !important;
+        color: #f1f5f9 !important;
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    section[data-testid="stFileUploadDropzone"]:hover {
+        background-color: #182234 !important;
+        border-color: #38bdf8 !important;
+    }
+
+    /* Browse Files Button / Link inside File Uploader */
+    section[data-testid="stFileUploadDropzone"] button,
+    section[data-testid="stFileUploadDropzone"] [data-testid="baseButton-secondary"],
+    [data-testid="stFileUploadDropzone"] button {
+        background: #1e293b !important;
+        color: #38bdf8 !important;
+        border: 1px solid #0284c7 !important;
+        border-radius: 6px !important;
+        padding: 6px 14px !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+        transition: all 0.2s ease;
+    }
+
+    section[data-testid="stFileUploadDropzone"] button:hover,
+    section[data-testid="stFileUploadDropzone"] [data-testid="baseButton-secondary"]:hover,
+    [data-testid="stFileUploadDropzone"] button:hover {
+        background: #0284c7 !important;
+        color: #ffffff !important;
+        border-color: #38bdf8 !important;
+        box-shadow: 0 0 10px rgba(2, 132, 199, 0.4) !important;
+    }
+
+    /* Dropzone text instructions */
+    [data-testid="stFileUploadDropzone"] span,
+    [data-testid="stFileUploadDropzoneInstructions"] span {
+        color: #f1f5f9 !important;
+    }
+
+    [data-testid="stFileUploadDropzone"] small,
+    [data-testid="stFileUploadDropzoneInstructions"] small {
+        color: #94a3b8 !important;
+    }
+
+    /* Uploaded File Chip / Box */
+    [data-testid="stFileUploaderFile"] {
+        background-color: #182234 !important;
+        border: 1px solid #334155 !important;
+        border-radius: 8px !important;
+        padding: 8px 12px !important;
+        color: #f1f5f9 !important;
+        margin-top: 8px !important;
+    }
+
+    [data-testid="stFileUploaderFileName"] {
+        color: #38bdf8 !important;
+        font-weight: 600 !important;
+    }
+
+    [data-testid="stFileUploaderFileSize"] {
+        color: #94a3b8 !important;
+    }
+
+    [data-testid="stFileUploaderDeleteBtn"] button {
+        color: #f87171 !important;
+    }
+
+    [data-testid="stFileUploaderDeleteBtn"] button:hover {
+        color: #ef4444 !important;
+        background-color: rgba(239, 68, 68, 0.15) !important;
+    }
+
+    [data-testid="stFileUploaderProgressBar"] > div {
+        background-color: #0284c7 !important;
+    }
+
+    /* Standardized Selectbox & Dropdown Overrides (Immune to Cloud Theme Inversion) */
+    [data-testid="stSelectbox"] {
+        color: #f1f5f9 !important;
+    }
+
+    [data-testid="stSelectbox"] label, [data-testid="stSelectbox"] [data-testid="stWidgetLabel"] p {
+        color: #e2e8f0 !important;
+        font-weight: 600 !important;
+    }
+
+    div[data-baseweb="select"] {
+        background-color: transparent !important;
+    }
+
+    div[data-baseweb="select"] > div {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+        border: 1px solid #334155 !important;
+        border-radius: 8px !important;
+    }
+
+    div[data-baseweb="select"]:hover > div {
+        border-color: #0284c7 !important;
+    }
+
+    div[data-baseweb="select"] * {
+        color: #f8fafc !important;
+    }
+
+    div[data-baseweb="select"] svg {
+        fill: #94a3b8 !important;
+        color: #94a3b8 !important;
+    }
+
+    /* BaseWeb Popover rendered at root body level */
+    div[data-baseweb="popover"],
+    div[data-baseweb="popover"] > div,
+    div[data-baseweb="menu"],
+    ul[role="listbox"] {
+        background-color: #0f172a !important;
+        border: 1px solid #334155 !important;
+        border-radius: 8px !important;
+        color: #f8fafc !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    div[data-baseweb="popover"] li,
+    ul[role="listbox"] li,
+    li[role="option"] {
+        background-color: #0f172a !important;
+        color: #f8fafc !important;
+        font-size: 14px !important;
+        padding: 8px 12px !important;
+        cursor: pointer !important;
+    }
+
+    div[data-baseweb="popover"] li:hover,
+    ul[role="listbox"] li:hover,
+    li[role="option"]:hover {
+        background-color: #0284c7 !important;
+        color: #ffffff !important;
+    }
+
+    div[data-baseweb="popover"] li[aria-selected="true"],
+    ul[role="listbox"] li[aria-selected="true"],
+    li[role="option"][aria-selected="true"] {
+        background-color: #1e293b !important;
+        color: #38bdf8 !important;
+        font-weight: 600 !important;
+    }
+
+    div[data-baseweb="popover"] li[aria-selected="true"]:hover,
+    ul[role="listbox"] li[aria-selected="true"]:hover {
+        background-color: #0284c7 !important;
+        color: #ffffff !important;
     }
 
     /* Streamlit Default Headers, Toolbar & Decoration Override */
@@ -370,41 +553,13 @@ st.markdown("""
         margin-top: 2px;
     }
 
-    /* Standardized Form Controls & BaseWeb Dropdown Overrides (Immune to Cloud Theme Inversion) */
+    /* Standardized Text Inputs & Textareas */
     .stTextInput input, div[data-baseweb="input"] input, div[data-baseweb="textarea"] textarea {
         background-color: #1e293b !important;
         color: #f8fafc !important;
         border: 1px solid #334155 !important;
         border-radius: 8px !important;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    }
-
-    div[data-baseweb="select"] > div {
-        background-color: #1e293b !important;
-        color: #f8fafc !important;
-        border: 1px solid #334155 !important;
-        border-radius: 8px !important;
-    }
-
-    div[data-baseweb="select"] span {
-        color: #f8fafc !important;
-    }
-
-    div[data-baseweb="popover"], div[data-baseweb="popover"] > div, div[data-baseweb="menu"], ul[role="listbox"] {
-        background-color: #0f172a !important;
-        border: 1px solid #334155 !important;
-        border-radius: 8px !important;
-        color: #f8fafc !important;
-    }
-
-    div[data-baseweb="popover"] li, ul[role="listbox"] li {
-        background-color: #0f172a !important;
-        color: #f8fafc !important;
-    }
-
-    div[data-baseweb="popover"] li:hover, ul[role="listbox"] li:hover {
-        background-color: #0284c7 !important;
-        color: #ffffff !important;
     }
 
     /* Standardized Buttons */
