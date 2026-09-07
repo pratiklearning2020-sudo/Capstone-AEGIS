@@ -17,10 +17,23 @@ Features:
 import datetime
 import json
 import re
+import shutil
 import time
 from pathlib import Path
 import pandas as pd
 import streamlit as st
+
+# Self-healing config bootstrap: Ensure .streamlit/config.toml exists from visible root config
+_dot_streamlit_dir = Path(".streamlit")
+_dot_config_file = _dot_streamlit_dir / "config.toml"
+_root_config_file = Path("streamlit_config.toml")
+if not _dot_config_file.exists():
+    _dot_streamlit_dir.mkdir(parents=True, exist_ok=True)
+    if _root_config_file.exists():
+        try:
+            shutil.copy(_root_config_file, _dot_config_file)
+        except Exception:
+            pass
 
 from src.agent.orchestrator import AgenticHealthcareAssistant
 from src.config import (
@@ -100,11 +113,26 @@ st.set_page_config(
 # Custom High-Contrast & True Chat Styling
 st.markdown("""
 <style>
-    /* Global Background and Typography */
-    .stApp {
+    /* Enforce Dark Color Scheme & Authoritative System Typography Across All Deployments */
+    :root, html, body, .stApp {
+        color-scheme: dark !important;
         background-color: #090d16 !important;
         color: #f1f5f9 !important;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    }
+
+    /* Streamlit Default Headers, Toolbar & Decoration Override */
+    header[data-testid="stHeader"] {
+        background-color: #090d16 !important;
+        color: #f1f5f9 !important;
+    }
+
+    [data-testid="stToolbar"] {
+        color: #94a3b8 !important;
+    }
+
+    [data-testid="stDecoration"] {
+        display: none !important;
     }
 
     /* Landing Page Portal Cards */
@@ -342,9 +370,72 @@ st.markdown("""
         margin-top: 2px;
     }
 
-    /* Form Controls */
-    .stTextInput input, .stSelectbox select {
+    /* Standardized Form Controls & BaseWeb Dropdown Overrides (Immune to Cloud Theme Inversion) */
+    .stTextInput input, div[data-baseweb="input"] input, div[data-baseweb="textarea"] textarea {
         background-color: #1e293b !important;
+        color: #f8fafc !important;
+        border: 1px solid #334155 !important;
+        border-radius: 8px !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+
+    div[data-baseweb="select"] > div {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+        border: 1px solid #334155 !important;
+        border-radius: 8px !important;
+    }
+
+    div[data-baseweb="select"] span {
+        color: #f8fafc !important;
+    }
+
+    div[data-baseweb="popover"], div[data-baseweb="popover"] > div, div[data-baseweb="menu"], ul[role="listbox"] {
+        background-color: #0f172a !important;
+        border: 1px solid #334155 !important;
+        border-radius: 8px !important;
+        color: #f8fafc !important;
+    }
+
+    div[data-baseweb="popover"] li, ul[role="listbox"] li {
+        background-color: #0f172a !important;
+        color: #f8fafc !important;
+    }
+
+    div[data-baseweb="popover"] li:hover, ul[role="listbox"] li:hover {
+        background-color: #0284c7 !important;
+        color: #ffffff !important;
+    }
+
+    /* Standardized Buttons */
+    .stButton > button {
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+
+    .stButton > button[kind="primary"] {
+        background: #0284c7 !important;
+        color: #ffffff !important;
+        border: 1px solid #38bdf8 !important;
+    }
+
+    .stButton > button[kind="secondary"] {
+        background: #1e293b !important;
+        color: #f1f5f9 !important;
+        border: 1px solid #334155 !important;
+    }
+
+    /* Standardized DataTables & JSON Viewers */
+    [data-testid="stDataFrame"], [data-testid="stJson"] {
+        background-color: #111827 !important;
+        border: 1px solid #1f2937 !important;
+        border-radius: 8px !important;
+    }
+
+    /* Standardized Dialogs & Popovers */
+    div[role="dialog"] {
+        background-color: #0f172a !important;
         color: #f8fafc !important;
         border: 1px solid #334155 !important;
     }
